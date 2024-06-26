@@ -79,7 +79,11 @@ void print_map(struct celestial_body galaxy[SIZE][SIZE]) {
     }
 }
 
-
+// Initialise the `struct celestial_body`s in the galaxy to their 
+// default values
+// Parameters: 
+// - galaxy: the 2D array representing the galaxy
+// Returns: nothing
 void initialise_galaxy(struct celestial_body galaxy[SIZE][SIZE]) {
 
     for (int row = 0; row < SIZE; row++) {
@@ -91,6 +95,11 @@ void initialise_galaxy(struct celestial_body galaxy[SIZE][SIZE]) {
 }
 
 
+// Scan the planet and nebula details into the galaxy, stopping when the user 
+// presses `ctrl-d`
+// Parameters: 
+// - galaxy: the 2D array representing the galaxy
+// Returns: nothing
 void scan_planets_nebulae(struct celestial_body galaxy[SIZE][SIZE]) {
 
     printf("Enter planets and nebulae:\n");
@@ -117,6 +126,12 @@ void scan_planets_nebulae(struct celestial_body galaxy[SIZE][SIZE]) {
     }
 }
 
+// Scan the player position and place them in the galaxy. Prompts the user to 
+// re-enter the position if they enter an invalid position (one taken up by a 
+// planet or nebula already)
+// Parameters: 
+// - galaxy: the 2D array representing the galaxy
+// Returns: nothing
 void scan_player_position(struct celestial_body galaxy[SIZE][SIZE]) {
     printf("Enter the starting position of the player: ");
     int row;
@@ -132,6 +147,11 @@ void scan_player_position(struct celestial_body galaxy[SIZE][SIZE]) {
 }
 
 
+// Scan the details of the stars into the galaxy, stopping when the user presses 
+// `ctrl-d`
+// Parameters: 
+// - galaxy: the 2D array representing the galaxy
+// Returns: nothing
 void scan_stars(struct celestial_body galaxy[SIZE][SIZE]) {
     printf("Enter the position and points of the star(s):\n");
     int star_row;
